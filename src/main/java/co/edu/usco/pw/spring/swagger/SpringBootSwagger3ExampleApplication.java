@@ -1,4 +1,4 @@
-package com.bezkoder.spring.swagger;
+package co.edu.usco.pw.spring.swagger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

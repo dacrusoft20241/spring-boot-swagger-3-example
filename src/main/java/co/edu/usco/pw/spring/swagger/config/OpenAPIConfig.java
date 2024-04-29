@@ -1,4 +1,4 @@
-package com.bezkoder.spring.swagger.config;
+package co.edu.usco.pw.spring.swagger.config;
 
 import java.util.List;
 
@@ -15,10 +15,10 @@ import io.swagger.v3.oas.models.servers.Server;
 @Configuration
 public class OpenAPIConfig {
 
-  @Value("${bezkoder.openapi.dev-url}")
+  @Value("${proyecto.openapi.dev-url}")
   private String devUrl;
 
-  @Value("${bezkoder.openapi.prod-url}")
+  @Value("${proyecto.openapi.prod-url}")
   private String prodUrl;
 
   @Bean
@@ -32,17 +32,17 @@ public class OpenAPIConfig {
     prodServer.setDescription("Server URL in Production environment");
 
     Contact contact = new Contact();
-    contact.setEmail("bezkoder@gmail.com");
-    contact.setName("BezKoder");
-    contact.setUrl("https://www.bezkoder.com");
+    contact.setEmail("correo@usco.edu.co");
+    contact.setName("dacrusoft");
+    contact.setUrl("https://www.dacrusoft.com");
 
     License mitLicense = new License().name("MIT License").url("https://choosealicense.com/licenses/mit/");
 
     Info info = new Info()
-        .title("Tutorial Management API")
+        .title("Personas Management API")
         .version("1.0")
         .contact(contact)
-        .description("This API exposes endpoints to manage tutorials.").termsOfService("https://www.bezkoder.com/terms")
+        .description("This API exposes endpoints to manage personas.").termsOfService("https://www.dacrusoft.com/terms")
         .license(mitLicense);
 
     return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
